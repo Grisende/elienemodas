@@ -6,7 +6,7 @@ use App\Domain\Repository\Contracts\BillsRepositoryInterface;
 use App\Domain\Repository\Contracts\DebitsRepositoryInterface;
 use App\Domain\Repository\Contracts\SalesRepositoryInterface;
 
-class GetData
+class GetDashboard
 {
     public function __construct(
         protected readonly BillsRepositoryInterface $billsRepository,

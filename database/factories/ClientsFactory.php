@@ -22,7 +22,7 @@ class ClientsFactory extends Factory
     {
         return [
             'client_name' => fake()->name(),
-            'client_cellphone' => fake('pt_BR')->phoneNumber(),
+            'client_phone' => fake('pt_BR')->phoneNumber(),
         ];
     }
 }

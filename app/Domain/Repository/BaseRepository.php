@@ -8,9 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 
 abstract class BaseRepository implements BaseRepositoryInterface
 {
-    public function findAll(Model $model): Collection
+    public function findAll(Model $model, int $page): array
     {
-        return $model::all();
+        return $model::all()->forPage($page, 5)->toArray();
+    }
+
+    public function count(Model $model): int
+    {
+        return $model::all()->count();
     }
 
     public function insert(Model $model, array $data): void
@@ -18,9 +23,9 @@ abstract class BaseRepository implements BaseRepositoryInterface
         $model::query()->insert($data);
     }
 
-    public function findById(Model $model, int $id): Collection
+    public function findById(Model $model, int $id): array
     {
-        return $model::all()->where('id', '=', $id);
+        return $model::all()->where('id', '=', $id)->toArray();
     }
 
     public function update(Model $model, int $id, array $data): void

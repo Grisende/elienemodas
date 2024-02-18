@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->increments('client_id');
             $table->string('client_name', 70);
-            $table->string('client_cellphone', 20);
+            $table->string('client_phone', 20);
         });
     }
 
