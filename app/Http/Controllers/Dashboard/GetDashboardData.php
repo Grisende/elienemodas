@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Domain\Application\Dashboard\GetData;
+use App\Domain\Dashboard\Application\GetDashboard;
 use App\Http\Controllers\Controller;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -11,7 +11,7 @@ class GetDashboardData extends Controller
 {
 
     public function __construct(
-        private readonly GetData $application
+        private readonly GetDashboard $application
     )
     {
     }
@@ -20,6 +20,7 @@ class GetDashboardData extends Controller
     {
 
         $data = $this->application->getData();
+        $data['title'] = 'DASHBOARD';
 
         return Inertia::render('Dashboard/Index', $data);
     }

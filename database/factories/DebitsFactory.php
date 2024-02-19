@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Domain\Entity\Debits;
+use App\Domain\Debits\Entity\Debits;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Domain\Entity\Debits>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Domain\Debits\Entity\Debits>
  */
 class DebitsFactory extends Factory
 {

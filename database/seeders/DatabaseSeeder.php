@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Domain\Entity\Bills;
-use App\Domain\Entity\Clients;
-use \App\Domain\Entity\Debits;
-use App\Domain\Entity\Entries;
-use App\Domain\Entity\Installments;
-use App\Domain\Entity\Sales;
+use App\Domain\Bills\Entity\Bills;
+use App\Domain\Clients\Entity\Clients;
+use App\Domain\Debits\Entity\Debits;
+use App\Domain\Entries\Entity\Entries;
+use App\Domain\Sales\Entity\Installments;
+use App\Domain\Sales\Entity\Sales;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

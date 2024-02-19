@@ -1,31 +1,40 @@
 <script setup>
-import Layout from "../../Shared/Layout.vue";
-import {Head} from "@inertiajs/vue3";
+    import Layout from "../../Shared/Layout.vue";
+    import { Head } from "@inertiajs/vue3";
+    import Header from "../../Shared/Header.vue";
+    import Title from "../../Shared/Title.vue";
 
-defineProps({
-    bills: String,
-    sales: String,
-    debits: String
-})
+    defineProps({
+        bills: {
+            type: String,
+            default: 0
+        },
+        sales: {
+            type: String,
+            default: 0
+        },
+        debits: {
+            type: String,
+            default: 0
+        },
+        title: {
+            type: String
+        }
+    })
 
-function formatPrice(value) {
-    let val = (value/1).toFixed(2).replace('.', ',')
-    return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-}
-
+    function formatPrice(value) {
+        let val = (value / 1).toFixed(2).replace('.', ',')
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    }
 </script>
 
 <template>
     <Head title="Dashboard"/>
     <Layout/>
-    <div class="bg-gray-50 h-20 border border-dashed"/>
+    <Header/>
 
     <div class="p-4 sm:ml-56">
-        <div class="mt-7 pb-3 border-b border-dashed">
-            <p class="text-x7 text-gray-600">
-                DASHBOARD
-            </p>
-        </div>
+        <Title :title=title />
         <div class="p-4">
             <div class="grid grid-cols-3 gap-16 mt-[3em]">
                 <div class="h-36 rounded-xl bg-gray-50">
@@ -56,4 +65,3 @@ function formatPrice(value) {
         </div>
     </div>
 </template>
-

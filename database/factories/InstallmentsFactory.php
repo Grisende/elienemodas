@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Domain\Entity\Installments;
+use App\Domain\Sales\Entity\Installments;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Domain\Entity\Installments>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Domain\Sales\Entity\Installments>
  */
 class InstallmentsFactory extends Factory
 {
